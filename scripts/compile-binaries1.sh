@@ -63,15 +63,6 @@ compile_hc_usb_1() {
     cp /home/pi/klipper/out/klipper.bin /home/pi/klipper_config/firmware_binaries/firmware-btt-hc-usb-1.bin
 }
 
-compile_hc_can_1() {
-    echo "Compiling firmware for HC usb "
-    cp -f /home/pi/klipper_config/config/boards/btt-HC-can-1/firmware.config /home/pi/klipper/.config
-    make olddefconfig
-    make clean
-    make
-    cp /home/pi/klipper/out/klipper.bin /home/pi/klipper_config/firmware_binaries/firmware-btt-hc-can-1.bin
-}
-
 
 # Force script to exit if an error occurs
 set -e
@@ -87,7 +78,6 @@ pushd /home/pi/klipper
 
 # Run make scripts for the supported boards.
 compile_hc_usb_1
-compile_hc_can_1
 compile_octopus_pro_446
 compile_octopus_pro_429
 compile_btt_octopus_11
